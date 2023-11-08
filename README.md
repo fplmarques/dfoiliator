@@ -122,7 +122,8 @@ Alternatively, you can use the script *check_dfoliator_results.sh* to summarize 
 In this command line, the argument '1' refers to the test name index (i.e., test_01).
 The result should be:
 
-`Results (P1 ⇒ P3):
+```
+Results (P1 ⇒ P3): \\
 MT12_004	==>	JP12959_S93_Trim2
 
 Results (P1 ⇒ P4):
@@ -134,8 +135,7 @@ Results (P3 ⇒ P1):
 Results (P4 ⇒ P1):
 
 Results (P3 ⇒ P2):
-``
-
+...
 ```
 
 
