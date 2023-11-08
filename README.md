@@ -7,11 +7,11 @@ This is a script to run a pipeline to [DFOIL](https://github.com/jbpease/dfoil/)
 
 ![alt text](https://github.com/fplmarques/dfoiliator/blob/main/test_files/clade_01_test.png)
 
-#### Compile all possible tests ((p1,p2)(p3,p4)) based on a rooted tree and a list of terminals
+#### 1. Compile all possible tests ((p1,p2)(p3,p4)) based on a rooted tree and a list of terminals:
 
 Here I am using a complete rooted topology (rooted.tre) and a list of terminals that, in this case, include all terminals of the clade above (tax_names.txt).
 
-```basg
+```bash
 Rscript DFOIL_Picker_mod.R -n tax_names.txt -t rooted.tre
 ```
 
@@ -32,9 +32,15 @@ JP13241_S20_Trim2 JP12959_S93_Trim2 JP12875_S24_Trim2 JP12965_S35_Trim2
 
 ```
 
+#### 2. Determine the taxa involved in the test and extract four-taxon trees that include them:
+
+For T1 (test 01) we want to evaluate the direction of introgression between terminals *Potamotrygon motoro* ex Rio Paraguai - Rio Cuiaba \[MT12-004\]	==>	*Potamotrygon falkneri* ex Rio Paraguai \[BZ-13/MZUSP 117820\]
 
 
-## test 04
+
+
+**MT12-004 <==> 117820**.
+The sequence names associated with these terminas
 
 # tree terminals
 # MT12-004 <==> 117820
