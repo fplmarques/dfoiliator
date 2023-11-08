@@ -99,6 +99,7 @@ It should result in something like this:
 ```
 test_name	p1	p2	p3	p4	out	dfoil_mode	signature	introgression
 ...
+test_51	MT12_005	MT12_004	JP12895_S103_Trim2	JP12959_S93_Trim2	JP13041_S47_Trim2	dfoil	0 0 - -	No Introgression
 test_13	MT12_004	JP12959_S93_Trim2	JP12965_S35_Trim2	JP10114_S95_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
 test_17	MT12_004	JP12959_S93_Trim2	JP12963_S106_Trim2	JP10117_S88_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
 test_36	JP12893_S21_Trim2	MT12_004	JP12959_S93_Trim2	JP12956_S83_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
@@ -112,7 +113,30 @@ test_47	MT12_004	MT12_001	JP12959_S93_Trim2	MS04_09	JP13041_S47_Trim2	dfoil	+ + 
 ...
 ```
 
-./check_dfoliator_results.sh
+Alternatively, you can use the script *check_dfoliator_results.sh* to summarize the results. This script ignores all tests that did not find evidence for introgression and assumes that you have used the notation 'test_0*' as a prefix of your test. Accordingly, you should execute the following command line:
+
+```bash
+./check_dfoliator_results.sh 1
+```
+
+In this command line, the argument '1' refers to the test name index (i.e., test_01).
+The result should be:
+
+`Results (P1 ⇒ P3):
+MT12_004	==>	JP12959_S93_Trim2
+
+Results (P1 ⇒ P4):
+
+Results (P2 ⇒ P3):
+
+Results (P3 ⇒ P1):
+
+Results (P4 ⇒ P1):
+
+Results (P3 ⇒ P2):
+``
+
+```
 
 
 
