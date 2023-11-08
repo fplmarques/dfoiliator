@@ -3,6 +3,7 @@ This is a script to run a pipeline to [DFOIL](https://github.com/jbpease/dfoil/)
 
 ## Requirements
 [DFOIL](https://github.com/jbpease/dfoil/) executables
+
 [bcftools](https://www.htslib.org/download/)
 
 ## Workflow
@@ -93,6 +94,23 @@ You can sort the file *test_01_summary_results.tsv* by its last column in which 
 sort -t$'\t' -k9,9 ./test_01/test_01_summary_results.tsv
 ```
 
+It should result in something like this:
+
+```
+test_name	p1	p2	p3	p4	out	dfoil_mode	signature	introgression
+...
+test_13	MT12_004	JP12959_S93_Trim2	JP12965_S35_Trim2	JP10114_S95_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
+test_17	MT12_004	JP12959_S93_Trim2	JP12963_S106_Trim2	JP10117_S88_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
+test_36	JP12893_S21_Trim2	MT12_004	JP12959_S93_Trim2	JP12956_S83_Trim2	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
+test_45	JP12893_S21_Trim2	MT12_004	JP12959_S93_Trim2	MS04_09	JP13041_S47_Trim2	dfoil	+ + 0 0	P12 ⇔ P3
+test_01	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP12965_S35_Trim2	JP13041_S47_Trim2	dfoil	- - 0 0	P12 ⇔ P4
+test_02	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP12963_S106_Trim2	JP13041_S47_Trim2	dfoil	- - 0 0	P12 ⇔ P4
+test_03	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP12974_S108_Trim2	JP13041_S47_Trim2	dfoil	- - 0 0	P12 ⇔ P4
+test_05	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP10116_f_Trim2	JP13041_S47_Trim2	dfoil	- - 0 0	P12 ⇔ P4
+test_38	MT12_004	MT12_001	JP12959_S93_Trim2	JP12956_S83_Trim2	JP13041_S47_Trim2	dfoil	+ + + 0	P1 ⇒ P3
+test_47	MT12_004	MT12_001	JP12959_S93_Trim2	MS04_09	JP13041_S47_Trim2	dfoil	+ + + 0	P1 ⇒ P3
+...
+```
 
 ./check_dfoliator_results.sh
 
