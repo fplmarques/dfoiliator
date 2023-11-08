@@ -1,23 +1,9 @@
 #!/usr/bin/R
-#Author: Shea M. Lambert
+# Author: Shea M. Lambert
+# Modified to receive options by Fernando P. L. Marques
 
-##package dependencies 
-if(!require(ape)){
-    install.packages("ape")
-    library(somepackage)
-}
-if(!require(phytools)){
-    install.packages("phytools")
-    library(somepackage)
-}
-if(!require(stringr)){
-    install.packages("stringr")
-    library(somepackage)
-}
-
-
-##Usage: Run this script using "Rscript DFOIL_Picker.R mynamesfile mytreefile" in the directory containing these files. 
-##Output will be written as "myoutput.txt" 
+##Usage: Run this script using "Rscript DFOIL_Picker.R -n <taxa_names_file> -t <tree_file>" in the directory containing these files. 
+## Output will be written as "four_taxa_sets.txt" 
 ##Example files for the names file (plain-text) and tree file (newick format) are provided as ornatus_names.txt and ornatus_tree.txt
 
 
@@ -44,6 +30,27 @@ if ("-n" %in% commandArgs(TRUE) & "-t" %in% commandArgs(TRUE)) {
 } else {
   display_usage()
 }
+
+#
+## LYBRARIES
+#
+##package dependencies 
+if(!require(ape)){
+    install.packages("ape")
+    library(somepackage)
+}
+if(!require(phytools)){
+    install.packages("phytools")
+    library(somepackage)
+}
+if(!require(stringr)){
+    install.packages("stringr")
+    library(somepackage)
+}
+
+
+
+
 
 # Read list file
 names <- scan(names_file, what="character")
@@ -134,4 +141,4 @@ results=results[!duplicated(unlist(sortvec))]
 
 
 ##write results
-write.table(results,file="./myoutput.txt",quote=FALSE,row.names=FALSE,col.names=FALSE)
+write.table(results,file="./four_taxa_sets.txt",quote=FALSE,row.names=FALSE,col.names=FALSE)
