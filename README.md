@@ -34,23 +34,22 @@ JP13241_S20_Trim2 JP12959_S93_Trim2 JP12875_S24_Trim2 JP12965_S35_Trim2
 
 #### 2. Determine the taxa involved in the test and extract four-taxon trees that include them:
 
-For T1 (test 01) we want to evaluate the direction of introgression between terminals *Potamotrygon motoro* ex Rio Paraguai - Rio Cuiaba \[MT12-004\]	==>	*Potamotrygon falkneri* ex Rio Paraguai \[BZ-13/MZUSP 117820\]
+For T1 (test 01) we want to evaluate the direction of introgression between terminals *Potamotrygon motoro* ex Rio Paraguai - Rio Cuiaba \[MT12-004\]	<==>	*Potamotrygon falkneri* ex Rio Paraguai \[BZ-13/MZUSP 117820\]
+
+The sequence names associated with these terminals are **MT12_004**  and **JP12959_S93_Trim2**, respectively.
+
+To extract the four-taxon trees that include both terminals, you should run this command line in your terminal:
+
+```bash
+grep MT12_004 four_taxa_sets.txt | grep JP12959_S93_Trim2 > test_01.txt
+```
+
+This command will write the file **test_01.txt** which should contain 52 lines.
 
 
 
 
-**MT12-004 <==> 117820**.
-The sequence names associated with these terminas
-
-# tree terminals
-# MT12-004 <==> 117820
-
-# sequence name
-# MT12_004 <==> JP12959_S93_Trim2
-
-
-
-grep MT12_004 myoutput.txt | grep JP12959_S93_Trim2 > test_04.txt
+grep MT12_004 myoutput.txt | grep JP12959_S93_Trim2 > test_01.txt
 ./prep4dfoiliator.py test_04.txt JP13041_S47_Trim2 dfoil
 ./dfoiliator.py -i potamotrygon_reference_91_clade_01dsuit.fas -t test_04.tsv
 sort -t$'\t' -k9,9 ./test_04/test_04_summary_results.tsv
