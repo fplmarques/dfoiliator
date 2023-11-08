@@ -1,6 +1,10 @@
 # dfoiliator
 This is a script to run a pipeline to [DFOIL](https://github.com/jbpease/dfoil/) analyses.
 
+## Requirements
+[DFOIL](https://github.com/jbpease/dfoil/) executables
+[bcftools](https://www.htslib.org/download/)
+
 ## Workflow
 
 ### Here is the example we will explore
@@ -56,7 +60,7 @@ You should run the following command line:
 ```bash
 ./prep4dfoiliator.py test_01.txt JP13041_S47_Trim2 dfoil
 ```
-The argument **JP13041_S47_Trim2** refers to the outgroup required in DFOIL analyses and **dfoil** especify the mode in which dfoil.py will be executed.
+The argument **JP13041_S47_Trim2** refers to the outgroup required in DFOIL analyses and **dfoil** especify the mode in which *dfoil.py* will be executed.
 
 This command line will generate the file **test_01.tsv** with the following structure:
 
@@ -68,10 +72,28 @@ test_03	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP12974_S108_Trim2	JP13041_
 test_04	MT12_004	JP12959_S93_Trim2	JP12875_S24_Trim2	JP10115_S89_Trim2	JP13041_S47_Trim2	dfoil
 ...
 ```
+#### 4. Run dfoiliator:
 
 
-./dfoiliator.py -i potamotrygon_reference_91_clade_01dsuit.fas -t test_04.tsv
-sort -t$'\t' -k9,9 ./test_04/test_04_summary_results.tsv
+Run *dfoiliator.py* with the following command line:
+
+```bash
+./dfoiliator.py -i test_snps.vcf -t test_01.tsv
+```
+
+The option *-i* defines the input file. It can be in .vcf or *.fas formats. If the input file is a VCF, [bcftools](https://www.htslib.org/download/) will be required, and *.tab (from vcf-to-tab) and *.fas will be created.
+
+All files associated with this command line will be stored in the directory **test_01/**, in which the file *test_01_summary_results.tsv* will summarize all the results.
+
+#### 5. Evaluating the results of the dfoiliator run:
+
+You can sort the file *test_01_summary_results.tsv* by its last column in which you can potentially find the direction of the introgression event:
+
+```bash
+sort -t$'\t' -k9,9 ./test_01/test_01_summary_results.tsv
+```
+
+
 ./check_dfoliator_results.sh
 
 
