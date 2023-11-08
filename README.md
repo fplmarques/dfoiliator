@@ -137,5 +137,5 @@ Results (P4 ⇒ P1):
 Results (P3 ⇒ P2):
 ...
 ```
-In this particular example, the event '(P1 ⇒ P3): MT12_004	==>	JP12959_S93_Trim2' represents the red arrow depicted in the figure above representing the direction of introgression from *Potamotrygon motoro* ex Rio Paraguai - Rio Cuiaba \[MT12-004\]to	*Potamotrygon falkneri* ex Rio Paraguai \[BZ-13/MZUSP 117820\]
+In this particular example, the event '(P1 ⇒ P3): MT12_004	==>	JP12959_S93_Trim2' represents the red arrow depicted in the figure above representing the direction of introgression from *Potamotrygon motoro* ex Rio Paraguai - Rio Cuiaba \[MT12-004\] to	*Potamotrygon falkneri* ex Rio Paraguai \[BZ-13/MZUSP 117820\]
 
