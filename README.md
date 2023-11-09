@@ -116,7 +116,7 @@ test_47	MT12_004	MT12_001	JP12959_S93_Trim2	MS04_09	JP13041_S47_Trim2	dfoil	+ + 
 Alternatively, you can use the script *check_dfoliator_results.sh* to summarize the results. This script ignores all tests that did not find evidence for introgression and assumes that you have used the notation 'test_0*' as a prefix of your test. Accordingly, you should execute the following command line:
 
 ```bash
-./check_dfoliator_results.sh 1
+./check_dfoiliator_results.sh 1
 ```
 
 In this command line, the argument '1' refers to the test name index (i.e., test_01).
