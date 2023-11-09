@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# usage: 
+#      ./check_dfoiliator_results.sh <int>
+#
+
 
 TEST=$1
 
