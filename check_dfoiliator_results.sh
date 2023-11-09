@@ -3,7 +3,15 @@
 # usage: 
 #      ./check_dfoiliator_results.sh <int>
 #
-
+# This script just uses grep and awk to parse *_summary_results.tsv from dfoiliator.py runs.
+# It will only work if you adopt the prefix "test_0<int>"
+# However you can use the logic applied here to to reach the same results regardless of how you name your tests.
+# Because this command line only sorts unique records for terminals of interest (i.e., p1 and p5),
+# it reduces the number of events of introgression reported in comparison to what is found in  *_summary_results.tsv
+# It is recommended to evaluate the number of tests performed and make appropriate corrections to p-values (Bonferroni procedure)
+#
+#                                                    Fernando P. L. Marques Nov. 2023
+#
 
 TEST=$1
 
